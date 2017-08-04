@@ -1,0 +1,7 @@
+---
+- include_vars: file-vault.yml
+
+- name: Copy file 
+  copy:
+    content="{{file_content}}"
+    dest=/tmp/file.txt

@@ -1,0 +1,15 @@
+# Keep "no_log: true" to avoid secrets in log/stdout
+---
+- name: Secrets | load credentials
+  include_vars: "credentials-vault.yml"
+  no_log: true
+
+- name: Secrets | Copy credentials
+  copy:
+    dest="{{ item.key }}"
+    content="{{ item.value.content }}"
+    owner="{{ item.value.owner  }}"
+    group="{{ item.value.group }}"
+    mode="{{ item.value.mode }}"
+  with_dict: "{{ test_credentials }}"
+  no_log: true
