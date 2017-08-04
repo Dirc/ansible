@@ -2,7 +2,7 @@
 
 ## Role ansible_vault
 Example for using an encrypted file in your playbook.
-Based on: [example from github](https://gist.github.com/tristanfisher/e5a306144a637dc739e7)
+Based on: [example from tristanfisher](https://gist.github.com/tristanfisher/e5a306144a637dc739e7)
 
 ```
 # roles/ansible_vault/vars/file-vault.yml password: pwd
@@ -27,3 +27,4 @@ ansible-playbook advanced_secrets.yml --ask-vault-pass --become --ask-become-pas
 #>Vault password:
 sudo cat /tmp/test_credentials*
 ls -l /tmp/test_credentials*
+``` 
